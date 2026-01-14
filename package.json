@@ -12,7 +12,6 @@
   "dependencies": {
     "@astrojs/check": "^0.9.6",
     "@astrojs/cloudflare": "^12.6.12",
-    "@astrojs/lit": "^4.3.0",
     "@unocss/astro": "^66.5.12",
     "@unocss/preset-uno": "^66.5.12",
     "@webcomponents/template-shadowroot": "^0.2.1",

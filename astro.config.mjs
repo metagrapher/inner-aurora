@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
 import cloudflare from '@astrojs/cloudflare';
-import lit from '@astrojs/lit';
+
 import UnoCSS from 'unocss/astro';
 
 // https://astro.build/config
@@ -15,7 +15,6 @@ export default defineConfig({
         port: 6969
     },
     integrations: [
-        lit(),
         UnoCSS({
             injectReset: true,
         }),

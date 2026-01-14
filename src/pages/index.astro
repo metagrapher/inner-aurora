@@ -1,15 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { GameUI } from "../components/GameUI";
+
 
 const cf = Astro.locals.runtime?.cf || null;
 ---
 
 <Layout title="Advanced Drug Wars | arca.de">
 	<main>
-		<GameUI client:only="lit" .geoData="${cf}" />
+		<game-ui geo-data={JSON.stringify(cf)}></game-ui>
 	</main>
 </Layout>
+
+<script>
+	import "../components/GameUI";
+</script>
 
 <style>
 	main {

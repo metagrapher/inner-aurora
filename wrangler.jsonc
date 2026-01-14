@@ -1,7 +1,8 @@
 {
     "name": "inner-aurora",
-    "main": "./src/api/index.ts",
+    "main": "./src/entry.ts",
     "compatibility_date": "2026-01-14",
+    "minify": true,
     "compatibility_flags": [
         "nodejs_compat"
     ],
