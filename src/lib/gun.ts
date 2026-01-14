@@ -16,9 +16,7 @@ export const initGun =
                 {
                     // Use local worker relay for development
                     peers: peers.length > 0 ? peers : [
-                        localPeer,
-                        "https://drugwars.arca.de.com/gun",
-                        "http://localhost:8787/gun"
+                        localPeer
                     ]
                     , localStorage: true
                 }
