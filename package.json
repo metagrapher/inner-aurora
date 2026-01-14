@@ -18,7 +18,7 @@
     "@webcomponents/template-shadowroot": "^0.2.1",
     "astro": "^5.16.8",
     "gun": "^0.2020.1241",
-    "hono": "^4.11.3",
+    "hono": "^4.11.4",
     "lit": "^3.3.2",
     "typescript": "^5.9.3",
     "unocss": "^66.5.12",
@@ -30,6 +30,6 @@
     "@vitest/ui": "^3.0.0",
     "happy-dom": "^20.1.0",
     "playwright": "^1.57.0",
-    "vitest": "^3.0.0"
+    "vitest": "^3.0.5"
   }
 }
