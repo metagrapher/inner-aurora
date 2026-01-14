@@ -118,7 +118,6 @@ export const processTimePassage = (
                 } else {
                     player.sleepingRough = true
                     result.sleepingRough = true
-                    isSafe = false
                 }
             }
         } else {

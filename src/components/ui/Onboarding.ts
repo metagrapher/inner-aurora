@@ -24,6 +24,9 @@ export const onboardingStyles = css`
     display: block;
     margin-bottom: 1rem;
   }
+  .role-phrase {
+    white-space: pre-line;
+  }
   .wealth-tag {
     font-size: 8px;
     padding: 2px 4px;
@@ -34,7 +37,7 @@ export const onboardingStyles = css`
   }
 `
 
-function renderRole({ role, label, icon, onSelect }: { role: string, label: string, icon: string, onSelect: (role: string) => void }) {
+function renderRole({ role, label, icon, phrase, onSelect }: { role: string, label: string, icon: string, phrase: string, onSelect: (role: string) => void }) {
   const wealthFactor = getLocationWealthFactor(role)
   const monthlyRent = calculateMonthlyRent(role)
   return html`
@@ -43,8 +46,8 @@ function renderRole({ role, label, icon, onSelect }: { role: string, label: stri
             <div class="chamfered-card-inner !py-10 !px-8 flex flex-col h-full">
               <span class="role-icon">${icon}</span>
               <div class="flex flex-col gap-3 mt-4">
-                <h3 class="text-crt text-lg">${label}</h3>
-                <p class="text-[10px] opacity-50 uppercase font-black tracking-tighter leading-tight">BUY LOW. SELL HIGH.<br>STAY AHEAD OF THE HEAT.</p>
+                <h3 class="text-crt text-lg">${role.slice(0,1).toUpperCase() + role.slice(1)}</h3>
+                <p class="role-phrase text-[10px] opacity-50 uppercase font-black tracking-tighter leading-tight">${phrase}</p>
               </div>
               <div class="mt-auto w-full pt-8">
                 ${renderActionButton(
@@ -68,10 +71,25 @@ export const renderNewGame =
       
       <div class="role-grid">
       ${[
-        {role: "entrepreneur", label: "Entrepreneur", icon: "💼", onSelect: () => onSelectRole("Entrepreneur")},
-        {role: "police", label: "Police", icon: "🚨", onSelect: () => onSelectRole("Police")},
-        {role: "nimby", label: "NIMBY", icon: "🏙️", onSelect: () => onSelectRole("NIMBY")}].map(renderRole)
-      }
+        { role: "entrepreneur"
+        , label: "Let's Go!"
+        , icon: "📟"
+        , phrase: "BUY LOW. SELL HIGH.\nSTAY AHEAD."
+        , onSelect: () => onSelectRole("Entrepreneur")
+        }
+      , { role: "police"
+        , label: "Join the Force"
+        , icon: "🚔"
+        , phrase: "PROTECT AND SERVE.\nENFORCE THE PEACE."
+        , onSelect: () => onSelectRole("Police")
+        }
+      , { role: "nimby"
+        , label: "Not in my backyard!"
+        , icon: "🏡"
+        , phrase: "FLIP HOUSES.\nCLEAN UP THE CITY."
+        , onSelect: () => onSelectRole("NIMBY")
+        }
+      ].map(renderRole)}
       </div>
       
       <div class="mt-20 opacity-30 text-[10px] uppercase tracking-[0.3em] font-bold">

@@ -38,7 +38,7 @@ export const handleNIMBYEncounter = (nimby: any, target: any, action: any) => {
     } else if (action === "ARGUE" || action === "ASK_TO_LEAVE") {
         const success = Math.random() > 0.5
         if (success) {
-            stats.nimbyStatus += 5
+            stats.nimbyCred += 5
             results.message = `You convinced them to move on. Social status up!`
             results.targetAction = "MOVE_OUT"
         } else {
@@ -59,7 +59,7 @@ export const handleNIMBYEncounter = (nimby: any, target: any, action: any) => {
             results.message = `Sweep complete. You found: ${Object.entries(loot).map(([id, count]) => `${count}x ${id}`).join(', ') || 'nothing but trash'}`
 
             // Transfer loot (this logic will be called in the UI/Gun sync layer to update both players)
-            stats.nimbyStatus += 10
+            stats.nimbyCred += 10
             stats.cash += 50
         }
     }
@@ -70,7 +70,7 @@ export const handleNIMBYEncounter = (nimby: any, target: any, action: any) => {
 
 export const handleCitizenReport = (reporter: any, location: string, targetType: "ENCAMPMENT" | "HARASSMENT", quality: "VAGUE" | "GOOD") => {
     const stats = reporter.gameData?.drugwars || reporter
-    reporter.cred = (reporter.cred || 0) + (quality === "GOOD" ? 5 : 1)
+    stats.nimbyCred = (stats.nimbyCred || 0) + (quality === "GOOD" ? 10 : 2)
     stats.lastActionTime = Date.now()
 
     return ({
@@ -87,6 +87,7 @@ export const handleCitizenReport = (reporter: any, location: string, targetType:
             , message: targetType === "ENCAMPMENT"
                 ? `Citizen measures ${quality} encampment activity.`
                 : `Citizen reports ${quality} harassment in progress.`
+            , isOccupied: true // In a report, we assume something is happening to report it.
             , timestamp: Date.now()
         }
         , reporter

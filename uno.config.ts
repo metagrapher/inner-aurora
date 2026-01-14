@@ -58,5 +58,6 @@ export default defineConfig({
     , rules: [
         ['shadow-terminal', { 'text-shadow': '0 0 5px rgba(255, 255, 255, 0.5)' }]
         , ['shadow-runner', { 'text-shadow': '0 0 10px #ef4444' }]
+        , [/^clip-path-\[([\s\S]+)\]$/, ([, d]) => ({ 'clip-path': d.replace(/_/g, ' ') })]
     ]
 })

@@ -1,5 +1,7 @@
 import { CITIES } from '../lib/cities'
 import { getSunSchedule } from '../lib/time/astronomy'
+import { Hono } from 'hono'
+export { GunRelay } from './relay'
 
 type Bindings = {
     GUN_RELAY: DurableObjectNamespace

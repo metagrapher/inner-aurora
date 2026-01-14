@@ -15,7 +15,7 @@ describe('UnoCSS Configuration', () => {
         const result = await uno.generate('btn-runner')
         // result.css contains rgb values or variables like --un-bg-opacity
         expect(result.css).toContain('rgb(239 68 68')
-        expect(result.css).toContain('clip-path: polygon')
+        expect(result.css).toContain('clip-path:polygon')
     })
 
     it('should generate correct CSS for card-terminal shortcut', async () => {

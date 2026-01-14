@@ -4,7 +4,7 @@ import { handleCitizenReport, handleBust } from './engine'
 describe('NIMBY/Cop Logic', () => {
     it('should generate granular reports', () => {
         const nimby = { id: 'n1', nimbyCred: 0, nimbyStatus: 0, role: 'NIMBY' }
-        const { event, nimby: updatedNimby } = handleCitizenReport(nimby, 'Brooklyn', "ENCAMPMENT", 'GOOD')
+        const { event, reporter: updatedNimby } = handleCitizenReport(nimby, 'Brooklyn', "ENCAMPMENT", 'GOOD')
 
         expect(event.quality).toBe('GOOD')
         expect(event.isOccupied).toBe(true)

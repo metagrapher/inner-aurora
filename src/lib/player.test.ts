@@ -65,13 +65,13 @@ describe("Player Core Logic & Car Ownership", () => {
         entPlayer.cityId = "nyc";
         entPlayer.location = "Brooklyn";
 
-        const nimbyResult = handleTravel(nimbyPlayer, "CAR", true, undefined, "Manhattan");
-        const entResult = handleTravel(entPlayer, "CAR", true, undefined, "Manhattan");
+        const nimbyResult: any = handleTravel(nimbyPlayer, "CAR", { isIntraCity: true, targetDistrict: "Manhattan" });
+        const entResult: any = handleTravel(entPlayer, "CAR", { isIntraCity: true, targetDistrict: "Manhattan" });
 
         // Base risk for CAR is 0.10 in TRAVEL_COSTS.intra_ways
         // NIMBY (100 quality): 0.10 * (1.5 - 1.0) = 0.05
         // Ent (50 quality): 0.10 * (1.5 - 0.5) = 0.10
-        expect(nimbyResult.costData.risk).toBeCloseTo(0.05);
-        expect(entResult.costData.risk).toBeCloseTo(0.10);
+        expect(nimbyResult.travelData.risk).toBeCloseTo(0.05);
+        expect(entResult.travelData.risk).toBeCloseTo(0.10);
     });
 });
