@@ -26,6 +26,7 @@ export default {
             
             // Mock ASSETS if missing to prevent 404 crashes in some environments
             if (!env.ASSETS) {
+                console.warn('[Entry] ASSETS binding missing, mocking for safety')
                 env.ASSETS = {
                     fetch: async () => new Response('Asset Not Found', { status: 404 })
                 }
