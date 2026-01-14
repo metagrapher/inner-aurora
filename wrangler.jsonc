@@ -1,5 +1,5 @@
 {
-    "name": "advanced-drugwars",
+    "name": "inner-aurora",
     "main": "./src/api/index.ts",
     "compatibility_date": "2026-01-14",
     "compatibility_flags": [
@@ -16,7 +16,7 @@
     "migrations": [
         {
             "tag": "v1",
-            "new_classes": [
+            "new_sqlite_classes": [
                 "GunRelay"
             ]
         }
