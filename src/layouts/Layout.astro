@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{"Advanced Drug Wars | arca.de"}</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;800;900&family=Outfit:wght@300;400;600;700&family=Inter:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body
+        class="bg-slate-950 text-white min-h-screen selection:bg-runner selection:text-white overflow-x-hidden"
+    >
+        <slot />
+    </body>
+</html>
+
+<style is:global>
+    /* Paul Irish's CSS Reset (simplified) */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    :root {
+        --runner: #ef4444;
+        --accent: #ef4444;
+        --surface: #020617; /* slate-950 */
+        --surface-alt: #0f172a; /* slate-900 */
+        --text: #ffffff;
+        --text-dim: rgba(255, 255, 255, 0.4);
+        --border: rgba(255, 255, 255, 0.1);
+    }
+
+    html {
+        font-family: "Outfit", sans-serif;
+        background: var(--surface);
+        color: var(--text);
+        scrollbar-width: thin;
+        scrollbar-color: var(--runner) #020617;
+    }
+
+    h1,
+    h2,
+    h3,
+    .font-heading {
+        font-family: "Orbitron", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+    }
+
+    /* Selection Color */
+    ::selection {
+        background: var(--matrix-green);
+        color: black;
+    }
+</style>

@@ -1,0 +1,23 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { GameUI } from "../components/GameUI";
+
+const cf = Astro.locals.runtime?.cf || null;
+---
+
+<Layout title="Advanced Drug Wars | arca.de">
+	<main>
+		<GameUI client:only="lit" .geoData="${cf}" />
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		width: 100%;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+</style>

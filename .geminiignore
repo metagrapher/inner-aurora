@@ -1,0 +1,33 @@
+# --- Dependencies & Locks (Biggest Token Savers) ---
+node_modules/
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+bun.lockb
+
+# --- Astro.js Build & Cache ---
+.astro/
+dist/
+# Optional: Ignore public assets if you have large images/videos
+public/images/
+public/fonts/
+
+# --- Cloudflare Workers & Hono ---
+.wrangler/
+.dev.vars
+wrangler-types.d.ts
+# Ignore worker builds if they are separate
+worker-build/
+
+# --- Environment & Secrets (Security + Token Safety) ---
+.env
+.env.*
+!.env.example
+
+# --- General System & IDE ---
+.git/
+.DS_Store
+.vscode/
+.idea/
+coverage/
+*.log

@@ -1,0 +1,32 @@
+    "name": "advanced-drugwars",
+    "main": "./.output/server/index.mjs",
+    "compatibility_date": "2026-01-14",
+    "compatibility_flags": [
+        "nodejs_compat"
+    ],
+    "durable_objects": {
+        "bindings": [
+            {
+                "name": "GUN_RELAY",
+                "class_name": "GunRelay"
+            }
+        ]
+    },
+    "migrations": [
+        {
+            "tag": "v1",
+            "new_classes": [
+                "GunRelay"
+            ]
+        }
+    ],
+    "observability": {
+        "enabled": true
+    },
+    "routes": [
+        {
+            "pattern": "drugwars.arca.de.com",
+            "custom_domain": true
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+  "name": "advanced-drugwars",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev --port 6969",
+    "build": "astro build",
+    "preview": "astro preview --port 6969",
+    "astro": "astro",
+    "deploy": "npm run build && npx wrangler deploy"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.6",
+    "@astrojs/cloudflare": "^12.6.12",
+    "@astrojs/lit": "^4.3.0",
+    "@unocss/astro": "^66.5.12",
+    "@unocss/preset-uno": "^66.5.12",
+    "@webcomponents/template-shadowroot": "^0.2.1",
+    "astro": "^5.16.8",
+    "gun": "^0.2020.1241",
+    "hono": "^4.11.3",
+    "lit": "^3.3.2",
+    "typescript": "^5.9.3",
+    "unocss": "^66.5.12",
+    "wrangler": "^4.58.0"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.12.1",
+    "@playwright/test": "^1.57.0",
+    "@vitest/ui": "^3.0.0",
+    "happy-dom": "^20.1.0",
+    "playwright": "^1.57.0",
+    "vitest": "^3.0.0"
+  }
+}
